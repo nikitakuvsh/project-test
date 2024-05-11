@@ -3,7 +3,7 @@
 let numberOfFilms;
 
 
-function start(){
+function start() {
     numberOfFilms = +prompt("Сколько вы посмотрели фильмов за последний месяц?");
 
     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
@@ -11,23 +11,23 @@ function start(){
     }
 }
 
-function rememberMyFilms(){
-    for (let i = 0; i < 2; i++){
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
         const a = prompt('Один из последних просмотренных фильмов?', ''),
             b = prompt('На сколько оцените его?', '');
-    
-        if (a != null && b != null && a != '' && b != '' && a.length < 50){
+
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
             personalMovieDB.movies[a] = b;
             console.log('done');
         } else {
             console.log('error');
             i--;
         }
-    
+
     }
 }
 
-function detectPersonalLever(){
+function detectPersonalLever() {
     if (personalMovieDB.count < 10) {
         console.log('Просмотрено довольно мало фильмов');
     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
@@ -39,14 +39,16 @@ function detectPersonalLever(){
     }
 }
 
-function showMyDB(){
+function showMyDB() {
     if (personalMovieDB.privat == false) {
-        return personalMovieDB
+        console.log(personalMovieDB)
+    } else {
+        console.log('DB is private :(')
     }
 }
 
-function writeYourGenres(){
-    for (let i = 0; i < 3; i++){
+function writeYourGenres() {
+    for (let i = 0; i < 3; i++) {
         let yourGenres = prompt(`Ваш любимый жанр ${i + 1}`);
         personalMovieDB.genres.push(yourGenres);
     }
@@ -64,9 +66,7 @@ const personalMovieDB = {
 start();
 rememberMyFilms();
 detectPersonalLever();
-showMyDB();
 writeYourGenres();
-
-console.log(personalMovieDB);
+showMyDB();
 
 
