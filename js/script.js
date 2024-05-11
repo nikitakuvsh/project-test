@@ -1,4 +1,4 @@
-//numberOfFilms personalMovieDB -> count, movies, actors, genres, privat
+'use strict'
 
 const numberOfFilms = +prompt("Сколько вы посмотрели фильмов за последний месяц?");
 
@@ -10,13 +10,30 @@ const personalMovieDB = {
     privat: false
 };
 
-a = prompt("Какой фильм вы смотрели?");
-b = prompt(`На сколько вы оцените фильм ${a}?`);
+for (let i = 0; i < 2; i++){
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+        b = prompt('На сколько оцените его?', '');
 
-c = prompt("Какой ещё фильм вы смотреи недавно?");
-d = prompt(`На сколько вы оцените фильм ${c}?`);
+    if (a != null && b != null && a != '' && b != '' && a.length < 50){
+        personalMovieDB.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+}
+
+if (personalMovieDB.count < 10) {
+    console.log('Просмотрено довольно мало фильмов');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    console.log('Вы классический зритель');
+} else if (personalMovieDB.count >= 30) {
+    console.log('Вы киноман')
+} else {
+    console.log('Произошла ошибка');
+}
 
 console.log(personalMovieDB);
+
+
