@@ -74,5 +74,3 @@ personalMovieDB.rememberMyFilms();
 personalMovieDB.detectPersonalLever();
 personalMovieDB.writeYourGenres();
 personalMovieDB.showMyDB();
-
-

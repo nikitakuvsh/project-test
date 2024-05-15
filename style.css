@@ -1,0 +1,74 @@
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.wrapper {
+    display: inline-flex;
+}
+
+.heart {
+    margin-right: 150px;
+    width: 100px;
+    height: 175px;
+    background-color: red;
+    box-shadow: -1px 0px 2px #444;
+    -webkit-border-radius: 50px 50px 0 0;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    -o-transform: rotate(315deg);
+    transform: rotate(315deg);
+    margin-bottom: 50px;
+}
+
+.heart:before {
+    position: absolute;
+    width: 175px;
+    height: 100px;
+    left: 0;
+    bottom: 0;
+    content: "";
+    background-color: red;
+    box-shadow: 0px 3px 3px #444444;
+    -webkit-border-radius: 50px 50px 0 0;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 0 50px 50px 0;
+}
+
+.heart:hover:before,
+.heart:hover {
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.black {
+    color: white;
+    background-color: black;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    align-content: center;
+}
